@@ -1,0 +1,19 @@
+{
+  "name": "node-starter",
+  "private": true,
+  "scripts": {
+    "test1": "npm i && npx jasmine",
+    "test": "npm i && node spec/run-jasmine.js"
+  },
+  "devDependencies": {
+    "jasmine": "^5.2.0",
+    "jasmine-reporters": "^2.5.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "supertest": "^7.1.4"
+  }
+}
