@@ -19,7 +19,7 @@ const registerUser = async (req, res, next) => {
     const { username, email, password } = req.body;
     const existingUser = users.find((user) => user.email === email);
     if (existingUser) {
-      res.status(400).json({ message: 'User already exists' });
+      return res.status(400).json({ message: 'User already exists' });
     }
     const hashedPassword = await bcrypt.hash(password, 12);
     const newUser = {
@@ -67,7 +67,7 @@ const loginUser = async (req, res, next) => {
     );
     res.cookie('token', token, {
       httpOnly: true,
-      MaxAge: 7200000,
+      maxAge: 7200000,
     });
     res.status(200).json({
       message: 'Login successful',
